@@ -1,0 +1,31 @@
+# .gitignore
+
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pyz/
+*.pyw/
+*.pytest_cache/
+
+# IDE and text editor files
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+*.war
+*.ear
+*.jar
+
+# Database
+*.sqlite3
+
+# Virtual Environment
+venv/
