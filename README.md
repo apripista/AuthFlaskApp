@@ -1,5 +1,7 @@
 ###### Read each line carefully, you may need to replace something with your own credentials, up to now the project can run locally. 
 
+
+###### Remember to replace your email and password with your actual email credentials.
 # AuthFlaskApp: Flask User Authentication Application
 
 # NOTE: STILL UNDER IMPROVEMENTS TAKE CARE WITH YOURSELF: RUN IT LOCALLY AND IF CAN PROCEED JUST DO THAT WITH NO ANY EXCUSES
