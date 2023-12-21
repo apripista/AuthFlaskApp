@@ -1,0 +1,35 @@
+CREATE TABLE public.accounts (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    country VARCHAR(255),
+    pin VARCHAR(4) NOT NULL,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    day INTEGER,
+    month INTEGER,
+    year INTEGER,
+    verified BOOLEAN DEFAULT false,
+    profile_picture VARCHAR(255) DEFAULT 'default_profile_image.png',
+    tfa VARCHAR(1) DEFAULT 'F',
+    auth_token VARCHAR(6),
+    ttmp TIMESTAMP,
+    role VARCHAR(10) DEFAULT 'user'
+);
+
+
+
+CREATE TABLE deleted_accounts (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    day INTEGER,
+    month INTEGER,
+    year INTEGER,
+    deleted_date DATE DEFAULT CURRENT_DATE,
+    deletion_reason TEXT
+);
