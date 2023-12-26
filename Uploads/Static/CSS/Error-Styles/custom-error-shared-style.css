@@ -1,0 +1,16 @@
+        /* Shared styles for error pages */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ff6347; /* Tomato color for the header */
+        }
+
+        p {
+            font-size: 18px;
+        }

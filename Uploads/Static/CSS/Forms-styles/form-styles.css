@@ -1,0 +1,69 @@
+            /* Additional styles for the entire page */
+            body {
+                background-color: #333; /* Set the background color to black */
+                color: white; /* Set the text color to white */
+            }
+            .register{
+                background-color: rgb(77, 77, 77);
+            }
+            
+            /* Style the navbar links */
+            .navbar-nav .nav-link {
+                color: rgb(0, 0, 0) !important; /* Set the link color to black */
+            }
+            .navbar-nav .nav-link:hover {
+                text-decoration: underline;
+                font-weight: bold;
+                color: rgb(190, 3, 3) !important; /* Set the link color to near red */
+            }
+            
+            /* Style the form container */
+            .form-container {
+                background-color: #333;
+                color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+
+            /* Style the card */
+            .card {
+                background-color: #333; /* Set the card background color to shadow of grey black */
+                color: white; /* Set the text color in the card to white */
+                border: 1px solid rgb(91, 91, 91); /* Add a white border to the card */
+            }
+
+
+            /* Style the form inputs */
+            .form-group label {
+                color: rgb(255, 255, 255); /* Set the label color to wheat */
+            }
+
+            .form-control {
+                background-color: #333; /* Set the input background color to a darker shade */
+                color: rgb(255, 255, 255); /* Set the input text color to white */
+                border: 1px solid #888; /* Set the input border color to a lighter shade */
+            }
+
+            .form-control:focus {
+                border-color: teal; /* Set the input border color to teal when focused */
+            }
+
+            .btn-primary {
+                background-color: teal; /* Set the button background color to teal */
+                border-color: teal; /* Set the button border color to teal */
+            }
+
+            .btn-primary:hover {
+                background-color: #014343; /* Darker teal color on button hover */
+                border-color: #026161;
+                color: #22d2cf;
+            }
+            .form-links{
+                color: #0077ff;
+            }
+            .form-links:hover{
+                color: #00ff95;
+            }
+

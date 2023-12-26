@@ -1,0 +1,49 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(30, 30, 30);
+            font-size: 1.3em;
+            color: white;
+            text-align: center
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px dotted rgb(17, 234, 17);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid teal;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 70px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        a {
+        color: #fff;
+        margin-left: 70px;
+        }
+        a:hover{
+        color: teal;
+        text-decoration: underline;

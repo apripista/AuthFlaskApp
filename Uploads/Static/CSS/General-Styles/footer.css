@@ -1,0 +1,44 @@
+/* Style the footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styling for extra small screens */
+@media (min-width: 400px) and (max-width: 576px) {
+    footer {
+        position: relative;
+        padding: 20px;
+    }
+}
+
+/* Responsive styling for small screens */
+@media (min-width: 577px) and (max-width: 767px) {
+    footer {
+        padding: 0px;
+
+    }
+    .text-center a {
+        margin-bottom: 1px; /* Add margin to links inside .text-center */
+
+}
+
+/* Responsive styling for large screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+    footer {
+        padding: 20px;
+    }
+}
+
+/* Responsive styling for extra large screens */
+@media (min-width: 1200px) {
+    footer {
+        padding: 25px;
+    }
+}
+}

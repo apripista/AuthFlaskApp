@@ -1,0 +1,28 @@
+        .flash-message-box {
+            display: flex;
+            justify-content: flex-end;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .flash-message {
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .flash-error {
+            color: white;
+            background-color: tomato;
+        }
+
+        .flash-success {
+            color: white;
+            background-color: teal;
+        }
+
+        .flash-info {
+            color: black;
+            background-color: rgb(228, 119, 42);
+        }

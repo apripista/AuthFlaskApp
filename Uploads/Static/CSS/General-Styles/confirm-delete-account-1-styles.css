@@ -1,0 +1,73 @@
+/* styles.css */
+
+.two-column-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    margin: 20px;
+    margin-right: 20px;
+}
+
+.two-columns-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lable-form {
+    flex: 1;
+    margin: 10px;
+}
+
+.lab-group {
+    margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 480px) {
+    .two-column-form {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .two-column-form {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .two-columns-container {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .two-columns-container {
+        flex-direction: row;
+    }
+
+    .column {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /* Your styles for large screens */
+}
