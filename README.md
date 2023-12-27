@@ -59,7 +59,11 @@ Ensure you have the following installed on your system:
 
 - Python 3.11.4 + or 3.11.x
 - Flask 3.0.0
+- postgreSQL 16.0
 - [Virtual environment](https://docs.python.org/3/tutorial/venv.html) (recommended)
+- How to install flask: [flask Documentation](https://flask.palletsprojects.com/en/3.0.x/)
+- How to install postgreSQL: [PostgreSQL](https://www.postgresql.org/) 
+- How to install python: [python](https://www.python.org/)
 
 ### Installation
 
@@ -68,7 +72,9 @@ Ensure you have the following installed on your system:
    ```bash
     git clone https://github.com/Perfect-Altruistics/AuthFkaskApp   cd InsipiraHub.git
     cd AuthFkaskApp
+   
 
+Remember to install a requirements.txt file py running
 ## Configuration
 
 ### Database Setup
@@ -278,7 +284,7 @@ If you find a bug or have a suggestion, please [open an issue](https://github.co
 
 ### 3: Coding Standards
 
-Thank you for considering contributing to our project! Before making contributions, please familiarize yourself with our [Flask template coding standards](FLASK_TEMPLATE_CODING_STANDARDS.md). and Follow the [coding standards](CODING_STANDARDS.md) to maintain a consistent code style.
+Thank you for considering contributing to our project! Before making contributions, please familiarize yourself with our [Flask template coding standards](MD-FILES/FLASK_TEMPLATE_CODING_STANDARDS.md). and Follow the [coding standards](MD-FILES/CODING_STANDARDS.md) to maintain a consistent code style.
 
 ### 4: Testing
 
@@ -290,7 +296,7 @@ The maintainers will review all pull requests. Be patient during the review proc
 
 ### 6: Code of Conduct
 
-Please make sure to follow our [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTION_GUIDELINES.md).
+Please make sure to follow our [Code of Conduct](MD-FILES/CODE_OF_CONDUCT.md) and [Contribution Guidelines](MD-FILES/CONTRIBUTION_GUIDELINES.md).
 Thank you for contributing!.
 Happy coding!
 
