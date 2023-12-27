@@ -5,7 +5,7 @@
 # AuthFlaskApp: Flask User Authentication Application
 
 # NOTE: STILL UNDER IMPROVEMENTS TAKE CARE WITH YOURSELF: RUN IT LOCALLY AND IF CAN PROCEED JUST DO THAT WITH NO ANY EXCUSES
-`AuthFlaskApp` is a Is a simple flask web application that is focused on user authentication, it is just to demonstrate the user authentication, created by `Tito M. Joctan` (Perfect-Altruistics) in October 2023. Developed in Python using the Flask web application framework. It Allows users to create accounts, verify their identity, and manage sensitive user data, including password changes, resets, updates, deletions, and changes to email and user profiles.
+`AuthFlaskApp` Is a simple flask web application that is focused on user authentication, it is just to demonstrate the user authentication, created by `Tito M. Joctan` (Perfect-Altruistics) in October 2023. Developed in Python using the Flask web application framework. It Allows users to create accounts, verify their identity, and manage sensitive user data, including password changes, resets, updates, deletions, and changes to email and user profiles.
 
 ## Table of Contents
 
