@@ -20,7 +20,6 @@ CREATE TABLE public.accounts (
 );
 
 
-
 CREATE TABLE deleted_accounts (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
@@ -32,4 +31,17 @@ CREATE TABLE deleted_accounts (
     year INTEGER,
     deleted_date DATE DEFAULT CURRENT_DATE,
     deletion_reason TEXT
+);
+
+CREATE TABLE tokens (
+    id serial PRIMARY KEY,
+    account_id integer REFERENCES accounts(id) ON DELETE CASCADE,
+    username character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    verification_token character varying(255),
+    verification_sent_time timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    verification_token_expiration timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    reset_password_token character varying(255),
+    reset_password_token_expiration timestamp without time zone,
+    verification_token_new character varying(255)
 );
