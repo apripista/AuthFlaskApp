@@ -1,0 +1,20 @@
+
+<div class="card mx-auto" style="max-width: 400px; margin-top: 50px;">
+                <div class="card-header text-center">
+                    <h1>Two-Factor Authentication Verification</h1>
+                        <p>Please check your email for a 6-digit verification code.
+                            Enter the code below to complete the login process:</p>                </div>
+                    <div class="card-body">
+                            <form method="POST" action="/verify_2fa_deletion">
+                                <label for="verification_code">Verification Code:</label>
+                                <input type="text" id="verification_code" name="verification_code" required><br>
+                                <button type="submit">Verify</button>
+                            </form>
+                    <div class="text-center">
+                    <a href="/reset_password" class="form-links">Forgot Password?</a>
+                    <span class="mx-2">|</span>
+                    <a href="/register" class="form-links">Register</a>
+                </div>
+        </div>
+ </div>
+

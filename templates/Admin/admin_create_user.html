@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/CSS/flash-styles.css') }}">
+
+</head>
+
+<body>
+    <h1>Welcome to the Admin Dashboard</h1>
+    <section>
+        <h2>User Management</h2>
+
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+        {% endwith %}
+        <form action="/admin/create_user" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required><br>
+            <label for="role">Role:</label>
+            <input type="text" id="role" name="role"><br>
+            <input type="submit" value="Create User">
+        </form>
+    </section>
+</body>
+<script src="{{ url_for('static', filename='static/JS/flash-disappear.js') }}"></script>
+</html>

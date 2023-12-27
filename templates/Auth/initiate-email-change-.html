@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiate Email Change</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Initiate Email Change</h1>
+    <p>Enter your old email address to initiate the email change process.</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="{{ url_for('initiate_email_change') }}">
+        <label for="email">Old Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Initiate Email Change</button>
+    </form>
+    <a href="{{ url_for('cancel_email_change', verification_token=verification_token) }}">Cancel Email Change</a>
+</body>
+</html>

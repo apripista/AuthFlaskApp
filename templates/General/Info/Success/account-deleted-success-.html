@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Success</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap from CDN included!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <h1>Your Account Has Been Successfully Deleted</h1>
+        <p>We're sorry to see you go, but we appreciate the time you spent with us.</p>
+        <p>If you have any feedback or suggestions on how we can improve, please don't hesitate to contact us. Your input is valuable and helps us enhance our service for all users.</p>
+        <p>Thank you for being a part of our community. If you ever decide to return, we'll be here to welcome you back with open arms.</p>
+        <p>Wishing you all the best in your future endeavors!</p>
+    </div>
+
+    <!-- Footer -->
+<footer class="mt-5">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-3">
+                <p><a href="/">Home</a></p>
+                <p><a href="/about">About</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a href="/contact">Contact</a></p>
+                <p><a href="/services">Services</a></p>
+                <p><a href="/documentation">Documentation</a></p>
+
+            </div>
+
+            <div class="col-md-3">
+                <p><a href="/terms">Terms of Service</a></p>
+                <p><a href="/partnerships">Partnerships</a></p>
+                <p><a href="/privacy_policy">Privacy Policy</a></p>
+            </div>
+
+            <div class="col-md-3">
+                <p>Follow us: <a href="https://twitter.com/Perfect_Altruis" target="_blank">Twitter</a></p>
+                <p>We are on: <a href="https://github.com/Perfect-Altruistics" target="_blank">Git Hub</a></p>
+                <p><a href="/services">Services</a></p>
+            </div>
+
+        </div>
+                <p>&copy; 2023 The Intuitivers Group. All rights reserved.</p>
+
+    </div>
+</footer>
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function validateLogin() {
+            // You can add custom validation logic here
+            // For example, check if the username/email and password are in the correct format
+            return true; // Return true to allow form submission, or false to prevent it
+        }
+    </script>
+    <script src="{{ url_for('static', filename='Static/JS/flash-disappear.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!--Account not verified user is trying to-->
+<!--Log in while their account is not verified yet-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Account Not Verified</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+ <h1>Account Not Verified</h1>
+    <p>Your account is not yet verified. Before You access this site you should verify your account. <p>
+
+    </p>Please check your email, you should have an email from Intuitivers then follow the 
+		instructions to verify your account.</p>
+
+    <p>If you haven't received the verification email, you can request a new one by clicking the button below:</p>
+
+    <form method="post" action="/resend_verification_email">
+      <div class="lable-form">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+      </div>
+      <div class="lab-group">
+          <button type="submit">resend</button>
+      </div>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!--when a verification link expires and user -->
+<!--still try to verify their account using the expired link-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Verification Error</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #cecaca;
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+      }
+
+      .container {
+          background-color: #dedddd;
+          padding: 40px;
+          border-radius: 8px;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+      }
+
+      p {
+          font-size: 18px;
+          margin-bottom: 20px;
+      }
+      a:hover {
+          text-decoration: underline;
+      }
+      .links {
+          margin-top: 20px;
+          text-align: center;
+      }
+
+      .links a {
+          margin: 0 3px;
+          text-decoration: none;
+          color: #1900ff;
+      }
+
+      .links a:hover {
+          
+          text-decoration: underline solid rgb(149, 17, 2) 3px;
+      }
+  </style>
+  </head>
+  <body>      
+    <div class="container">
+      <div class="links">
+        <h1>Verification Error</h1>
+        <p>The verification link is invalid or expired.</p>
+        <p>Please double-check the link or register again.</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Register Again</a>
+      </div>
+    </div>
+  
+  </body>
+</html>

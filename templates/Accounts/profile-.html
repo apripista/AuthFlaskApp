@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c1bfbf;
+            margin: 20px;
+            min-height: 100vh;
+            justify-content: flex-start;
+        }
+        p {
+            margin-top: 6px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .profile-picture {
+            border-radius: 50%;
+            width: 150px; /* Set the desired width */
+            height: 150px; /* Set the desired height */
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            margin: 0 3px;
+            text-decoration: none;
+            color: red;
+        }
+
+        .links a:hover {
+
+            text-decoration: underline solid rgb(149, 17, 2) 3px;
+        }
+
+
+            /* Style the modal */
+            .modal {
+              display: none; /* Hidden by default */
+              position: fixed; /* Stay in place */
+              z-index: 1; /* Sit on top */
+              left: 0;
+              top: 0;
+              width: 100%; /* Full width */
+              height: 100%; /* Full height */
+              overflow: auto; /* Enable scroll if needed */
+              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+              padding-top: 60px; /* Location of the box */
+            }
+
+          /* Style the modal content */
+          .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #3498db; /* Border color for the modal content */
+            width: 80%; /* Could be more or less, depending on screen size */
+            border-radius: 10px; /* Optional: Add rounded corners to the modal content */
+            text-align: center;
+          }
+
+          /* Style the options inside the modal */
+          .option {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px; /* Optional: Add rounded corners to the options */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+            text-decoration: none;
+          }
+
+          .create-post {
+            background-color: #3498db; /* Background color for Create New Post */
+            color: white;
+          }
+
+          .view-all {
+            background-color: #2ecc71; /* Background color for View All Posts */
+            color: white;
+          }
+
+          .view-your {
+            background-color: #e67e22; /* Background color for View Your Posts */
+            color: white;
+          }
+
+          .option:hover {
+            background-color: #2980b9; /* Darker background color on hover for all options */
+          }
+
+          /* Style the close button */
+          #closeModalBtn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Optional: Add rounded corners to the close button */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+          }
+
+          #closeModalBtn:hover {
+            background-color: #c0392b; /* Darker background color on hover for close button */
+          }
+
+        /* Style the modal button */
+        .modal-btn {
+          background-color: #3498db;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px; /* Optional: Add rounded corners to the button */
+          transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .modal-btn:hover {
+          background-color: #2980b9; /* Darker background color on hover */
+        }
+
+        .small{
+              color: wheat;
+        }
+    </style>
+    <!-- Include Bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+</head>
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<h1><span style="color: teal; text-decoration: underline">{{ username.title() }}</span> Profile</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <img class="profile-picture" src="{{ profile_picture }}" alt="Profile Picture">
+    <p class="small"><small>Joined: {{ registration_date|format_registration_date }}</small><br>
+        <small><a href="{{ url_for( 'profile' ) }}" style="color: wheat">@{{ username.title() }} </a> </small></p>
+
+    <div class="links">
+    <a href="{{ url_for('dashboard', username=username) }}">Dashboard</a>
+    <a href="{{ url_for('settings', username=username) }}">Settings</a>
+</div>
+
+<!-- Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script src="{{ url_for('static', filename='Static/Functions/flash-disappear.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Form{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Welcome back</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form class="lable-form" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <p style="display: inline;">Keep me logged in<input class="remember_me" type="checkbox" id="remember_me" name="remember_me"></p>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="links">
+        <p>Don't have an account? <a href="/">Home</a> | <a href="/register">Register</a></p>
+        <p>Forgot your password? <a href="/reset_password">Reset Password</a></p>
+    </div>
+</div>
+{% endblock %}

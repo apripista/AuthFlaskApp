@@ -1,0 +1,94 @@
+<!--Next time I will continue to style it as whole: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About InsipiraHub</title>
+
+    <!-- Bootstrap from CDN included!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>InsipiraHub: Where We're Nurtured to Grow together</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Welcome to InsipiraHub Community</h2>
+            <p> InsipiraHub is a social blogging platform that provides a platform for users to share and discover captivating stories, ideas, and experiences. We believe in the power of storytelling to connect people and inspire creativity.</p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>At InsipiraHub, our mission is to create a welcoming and inclusive space where individuals can express themselves freely. We aim to:</p>
+            <ul>
+                <li>Foster a community of diverse voices and perspectives.</li>
+                <li>Encourage creativity and self-expression through blogging.</li>
+                <li>Facilitate meaningful connections between users.</li>
+                <li>Promote positive and constructive discussions.</li>
+            </ul>
+        </section>
+
+        <section id="values">
+            <h2>Our Values</h2>
+            <p>Our values guide everything we do at InsipiraHub:</p>
+            <ul>
+                <li><strong>Inclusivity:</strong> Embracing diversity and creating a space for everyone.</li>
+                <li><strong>Creativity:</strong> Nurturing creativity through storytelling and content creation.</li>
+                <li><strong>Community:</strong> Building a supportive and engaging community of users.</li>
+                <li><strong>Integrity:</strong> Operating with transparency and ethical standards.</li>
+            </ul>
+        </section>
+
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <p>We are a passionate and dedicated team committed to making InsipiraHub a vibrant community. Get to know the faces behind the scenes:</p>
+            <!-- I will Add team member profiles or a link to a dedicated team page -->
+        </section>
+        <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries, please feel free to contact us at <a href="mailto:intuitivers@gmail.com">info@university.edu</a> or call us at [+1 (123) 456-7890]. You can also visit us at: Local For Now<!--I will put a real location address of my office later-->.</p>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Intuitivers. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

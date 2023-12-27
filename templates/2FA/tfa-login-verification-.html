@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub - login</title>
+
+    <!-- Bootstrap from CDN included!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+ <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+ <div class="card mx-auto" style="max-width: 400px; margin-top: 50px;">
+                <div class="card-header text-center">
+                    <h1>Two-Factor Authentication Verification</h1>
+                        <p>Please check your email for a 6-digit verification code.
+                            Enter the code below to complete the login process:</p>                </div>
+                    <div class="card-body">
+                        <form method="POST" action="/verify_2fa">
+                                <label for="verification_code">Verification Code:</label>
+                                <input type="text" id="verification_code" name="verification_code" required><br>
+                                <button type="submit">Verify</button>
+                         </form>
+                    <div class="text-center">
+                    <a href="/reset_password" class="form-links">Forgot Password?</a>
+                    <span class="mx-2">|</span>
+                    <a href="/register" class="form-links">Register</a>
+                </div>
+        </div>
+    </div>
+
+<!-- Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

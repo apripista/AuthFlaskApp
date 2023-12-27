@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Interactivity</title>
+  <style>
+    body{
+      color: #6200ea
+    }
+    /* CSS Styles */
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="demoHeading">Hello, JavaScript!</h1>
+
+<button onclick="changeText()">Click me</button>
+
+<script>
+  // JavaScript Functions
+  var currentTextIndex = 0;
+  var textOptions = ["Text changed!", "This is Tito's post", "Hello, JavaScript!"];
+
+  function changeText() {
+    document.getElementById('demoHeading').innerHTML = textOptions[currentTextIndex];
+    currentTextIndex = (currentTextIndex + 1) % textOptions.length;
+  }
+</script>
+
+</body>
+</html>

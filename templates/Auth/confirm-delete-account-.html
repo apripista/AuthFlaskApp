@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration Form{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Confirm Account Deletion</h1>
+    <p>Hello, {{ username }}!</p>
+    <p style="color: red; font-weight: bold; font-style: italic">This action cannot be undone</p>
+    <p>Are you sure you want to delete your account? Please select reasons for deletion:</p>
+
+    <form action="{{ url_for('delete_account') }}" method="POST" class="two-column-form">
+        <div>
+            <label>Reasons for Deletion:</label><br>
+            <input type="checkbox" id="reason1" name="deletion_reason[]" value="I no longer need this account">
+            <label for="reason1">I no longer need this account</label><br>
+
+            <input type="checkbox" id="reason2" name="deletion_reason[]" value="I have created a new account">
+            <label for="reason2">I have created a new account</label><br>
+
+            <input type="checkbox" id="reason3" name="deletion_reason[]" value="Privacy concerns">
+            <label for="reason3">Privacy concerns</label><br>
+        </div>
+
+        <div class="column">
+            <div class="two-columns-container">
+                <div class="lable-form">
+                    <label for="security_pin">Security PIN:</label><br>
+                    <input type="text" id="security_pin" name="security_pin" placeholder="Enter Your Security PIN" required><br><br>
+                </div>
+
+                <div class="lable-form">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required><br><br>
+                </div>
+            </div>
+
+            <div class="two-columns-container">
+                <div class="lable-form">
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" placeholder="Enter Your Email" required><br><br>
+                </div>
+
+                <div class="lable-form">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="username" placeholder="Enter Your Username" required><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-button">
+            <button type="submit">Confirm Delete</button>
+        </div>
+    </form>
+
+    <div class="links">
+        <p>Explore more at <a href="/">Home</a> | <a href="/logout">Log out </a>Instead</p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='Static/JS/flash-disappear.js') }}"></script>
+{% endblock %}

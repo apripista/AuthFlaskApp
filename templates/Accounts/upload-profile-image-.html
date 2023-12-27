@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Upload Profile Image</title>
+
+    <!-- Bootstrap link for cdn-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/upload-styles.css') }}">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<h1>profile image upload</h1>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" action="/upload_profile_picture">
+            <div class="form-group">
+                <label for="profile_picture">Profile Picture</label>
+                <input type="file" class="form-control" id="profile_picture" name="profile_picture" accept=".png, .jpeg, .jpg" required>
+                <small class="form-text text-muted">Upload your profile picture. Allowed formats: PNG, JPEG, JPG.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button> | <a href="/dashboard">dashboard</a>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='Static/JS/flash-disappear.js') }}"></script>
+
+</body>
+</html>

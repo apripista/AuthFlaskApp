@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .slice-lg {
+            background-color: #d1d0d0;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .slice-lg h3 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        .slice-lg p {
+            font-size: 18px;
+            color: #464545;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            border: none;
+            background-color: #383030;
+            padding: 15px 30px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            color: white;
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: #383030;
+        }
+
+        #footer-main {
+            background-color: #343a40;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-footer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-dark .nav-link {
+            color: #fff;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .footer-dark .nav-link:hover {
+            opacity: 1;
+        }
+
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #e2e2e2;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 1.2em;
+        }
+
+        textarea{
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <section class="slice slice-lg" id="sct-form-contact">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>If there's something we can help you with, let us know. We'll be more than happy to offer you our help</p>
+            <form action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control form-control-lg" type="text" id="name" name="name" placeholder="john doe" required><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control form-control-lg" id="email" name="email" placeholder="e.g. john@doe.com" required type="email" value="">
+                </div>
+            
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input class="form-control form-control-lg" id="subject" name="subject" placeholder="Subject" required type="text" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label><br>
+                    <textarea class="form-control form-control-lg" id="message" name="message" placeholder="Tell us a few words..." required rows="5" title="Type your Message"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="reset" class="btn btn-block btn-lg btn-secondary mt-4">Reset</button>
+                    <button class="btn btn-block btn-lg btn-primary mt-4" type="submit">Contact Us</button>
+                </div>
+                <p><a href="/">Home</a> | <a href="/profile">Profile</a></p>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="position-relative" id="footer-main">
+        <div class="footer pt-lg-7 footer-dark bg-dark">
+            <div class="container">
+                <div class="logo-footer">My Logo</div>
+                <!-- Your footer content here -->
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

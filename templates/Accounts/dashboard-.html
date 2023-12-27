@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub-Dashboard</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                align-content: space-around;
+                background-color: #bab3a9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            .sidebar {
+                width: 250px;
+                height: 100vh;
+                background-color: #477a49;
+                padding-top: 20px;
+            }
+
+            .sidebar h2 {
+                color: white;
+                text-align: center;
+            }
+
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .sidebar li {
+                margin-bottom: 15px;
+            }
+
+            .sidebar a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 13px;
+            }
+
+            .sidebar a:hover {
+                text-decoration: underline;
+            }
+
+            .content {
+                padding: 20px;
+            }
+         .profile-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        h1{
+        display: inline;
+        font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Welcome, {{ username.title() }}</h1>
+        <div class="user-info">
+            <img src="{{ profile_picture }}" class="profile-image" alt="Profile Picture">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('profile', username=username) }}">Profile</a></li>
+            <!-- Check if the user is an admin -->
+            {% if user_role == 'admin' %}
+                <li><a href="{{ url_for('admin_login') }}">Admin</a></li> <!-- Link to the admin panel -->
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="/upload_profile_image">Upload Image</a></li>
+        </ul>
+    </div>
+    <!-- Flash message-->
+    <div class="flash-message-box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'error' in message %}
+                        <div class="flash-message flash-error">{{ message }}</div>
+                    {% elif 'success' in message %}
+                        <div class="flash-message flash-success">{{ message }}</div>
+                    {% else %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <script src="{{ url_for('static', filename='Static/Functions/flash-disappear.js') }}"></script>
+
+</body>
+</html>

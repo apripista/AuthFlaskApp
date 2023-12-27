@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invalid Reset Token</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cecaca;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+  
+        .container {
+            background-color: #dedddd;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+  
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+  
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+  
+        .links a {
+            margin: 0 3px;
+            text-decoration: none;
+            color: #1900ff;
+        }
+  
+        .links a:hover {
+            
+            text-decoration: underline solid rgb(149, 17, 2) 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">        
+        <div class="links">
+            <h1>Invalid Reset Token</h1>
+            <p>The reset token is invalid or has expired. Please request a new password reset <a href="{{ url_for('forgot_password') }}">here</a>.</p>
+         </div>
+    </div>
+</body>
+</html>

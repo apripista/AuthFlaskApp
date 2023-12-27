@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub- Reset Password</title>
+    <!-- Include Bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+
+</head>
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class="container mt-5 form-container">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header text-center">
+                <h2>Resend Verification Email</h2>
+
+            </div>
+            <div class="card-body">
+        <p>Enter your email address to receive a new verification link.</p>                         <form method="post" action="/resend_verification" onsubmit="return validateRegistration()" enctype="multipart/form-data">
+                         <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Resend Verification Email</button>
+                        </div>
+                         <div class="text-center">
+                            <a href="/" class="form-links">Home</a>
+                            <span class="mx-2">|</span>
+                            <a href="/login" class="form-links">Sign up</a>
+                        </div>
+                 </form>
+            </div>
+        </div>
+    </div>
+<!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

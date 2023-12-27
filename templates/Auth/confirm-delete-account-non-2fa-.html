@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Account Deletion</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Include Bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/path/to/your/static/css/file.css"> <!-- Include your custom stylesheet -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Add your custom styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #dc3545;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Confirm Account Deletion</h1>
+    <p>Hello, {{ username }}!</p>
+    <p>Are you sure you want to delete your account? Please select reasons for deletion:</p>
+
+    <form action="{{ url_for('delete_account') }}" method="POST">
+        <label>Reasons for Deletion:</label><br>
+        <input type="checkbox" id="reason1" name="deletion_reason[]" value="I no longer need this account">
+        <label for="reason1">I no longer need this account</label><br>
+
+        <input type="checkbox" id="reason2" name="deletion_reason[]" value="I have created a new account">
+        <label for="reason2">I have created a new account</label><br>
+
+        <input type="checkbox" id="reason3" name="deletion_reason[]" value="Privacy concerns">
+        <label for="reason3">Privacy concerns</label><br>
+        <br><br>
+
+        <label for="security_pin">Security PIN:</label><br>
+        <input type="text" id="security_pin" name="security_pin" placeholder="Enter Your Security PIN" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter Your Password" required><br><br>
+
+        <label for="email">Email:</label><br> <!-- Add email input field -->
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br><br>
+
+        <button type="submit">Confirm Delete</button>
+    </form>
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

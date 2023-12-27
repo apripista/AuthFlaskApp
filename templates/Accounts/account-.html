@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub - Account</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/CSS/flash-styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Your InsipiraHub Account</h1>
+
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+        {% endwith %}
+    <ul style="list-style-type: none">
+        <li><a href="/delete_account">Delete Account</a></li>
+        <li><a href="{{ url_for('update_email') }}"> change email</a></li>
+        <li><a href="edit_profile">Change Profile</a></li>
+        <li><a href="{{ url_for('change_password')}}">change password</a></li>
+    </ul>
+
+    <script src="{{ url_for('static', filename='Static/Functions/flash-disappear.js') }}"></script>
+
+</body>
+</html>

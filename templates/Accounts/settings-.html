@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap from CDN included!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+
+    {# Comment block for base template #}
+    {# This template serves as the foundation for all pages in the Intuitivers web application. #}
+    {# It includes the common structure, navigation, flash messages, and footer. #}
+    {# Usage: #}
+    {# - Extend this template in other pages using <!--{% extends "base.html" %} -->#}
+    {# - Override specific blocks to customize content for individual pages. #}
+    {# - Blocks available for customization: title, content. #}
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="header">
+        <h1>Personal Manager</h1>
+        <!-- Flash message-->
+    <div class="flash-message-box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'Error' in message %}
+                        <div class="flash-message flash-error">{{ message }}</div>
+                    {% elif 'success' in message %}
+                        <div class="flash-message flash-success">{{ message }}</div>
+                    {% elif 'Info' in message %}
+                        <div class="flash-message flash-info">{{ message }}</div>
+                    {% else %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+        <p>Welcome to your personal manager <a href="/dashboard">Dashboard</a> | <a href="/profile">back</a></p>
+    </div>
+    <div class="post">
+        <h1>User Settings</h1>
+            <ul style="list-style-type: none">
+                <li><a href="/account">account</a></li>
+                <li><a href="/privacy">privacy</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+            </ul>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!--MY CUSTOM .JS FILES-->
+    <script src="{{ url_for('static', filename='Static/JS/flash-disappear.js') }}"></script>
+
+</body>
+</html>
+
+
+<!--
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub - User Settings</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+       Bootstrap CSS CDN
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+     Navigation Bar
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">InsipiraHub</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#profile">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#2fa">Two-Factor Authentication</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+     Edit Profile and 2FA Cards Side by Side
+    <div class="container mt-5">
+        <div class="row">
+            <-- Edit Profile Card -
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="mb-0">Edit Profile</h1>
+                    </div>
+                    <div class="card-body">
+                        Sample Form for Editing Profile
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username"
+                                    placeholder="Enter your new username">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="Enter your new email">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+             Two-Factor Authentication Card
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="mb-0">Two-Factor Authentication</h1>
+                    </div>
+                    <div class="card-body">
+                         Sample Form for Enabling 2FA
+                        <form>
+                            <div class="form-group">
+                                <label for="enable2fa">Enable 2FA</label>
+                                <input type="checkbox" class="form-check-input" id="enable2fa">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Sample Content
+    <div class="container mt-5">
+        <h2>Latest Updates</h2>
+        <div class="card-deck">
+             Sample Cards with Content
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Sample Image">
+                <div class="card-body">
+                    <h5 class="card-title">Latest News</h5>
+                    <p class="card-text">Stay tuned for the latest updates and news from InsipiraHub.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Sample Image">
+                <div class="card-body">
+                    <h5 class="card-title">New Features</h5>
+                    <p class="card-text">Explore our new features designed to enhance your user experience.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Sample Image">
+                <div class="card-body">
+                    <h5 class="card-title">Community Spotlight</h5>
+                    <p class="card-text">Discover inspiring stories from our InsipiraHub community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    Footer
+<footer class="mt-5 text-center bg-dark text-white p-3">
+    <div class="row">
+         Column 1
+        <div class="col-md-4">
+            <p class="info">Company</p>
+            <p><a href="/">Home</a></p>
+            <p><a href="/about">About</a></p>
+
+        </div>
+        <!Column 2
+        <div class="col-md-4">
+            <p class="info">Support</p>
+            <p><a href="/contact">Contact</a></p>
+            <p><a href="/services">Services</a></p>
+        </div>
+
+         Column 3 --
+        <div class="col-md-4">
+            <p class="info">Legal and Policies</p>
+            <p><a href="/terms">Terms of Service</a></p>
+            <p><a href="/partnerships">Partnerships</a></p>
+            <p><a href="/privacy_policy">Privacy Policy</a></p>
+        </div>
+
+        <-- Column 4 --
+        <div class="col-md-4">
+            <p>&copy; 2023 InsipiraHub.Inc. All rights reserved.</p>
+        </div>
+            <p>&copy; 2023 InsipiraHub.Inc. All rights reserved.</p>
+
+    </div>
+</footer>
+    <!- Bootstrap JS and Popper.js CDN --
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

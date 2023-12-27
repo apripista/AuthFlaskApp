@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA Verification</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Two-Factor Authentication Verification</h1>
+    <p>Please check your email for a 6-digit verification code. Enter the code below to complete the deletion process:</p>
+
+    <form method="POST" action="/verify_2fa">
+        <label for="verification_code">Verification Code:</label>
+        <input type="text" id="verification_code" name="verification_code" required><br>
+        <button type="submit">Verify</button>
+    </form>
+
+
+    <script src="{{ url_for('static', filename='Static/Functions/flash-disappear.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <h1>Welcome to the Admin Dashboard</h1>
+    <section>
+        <h2>User Management</h2>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+        <ul>
+            <li><a href="/admin/create_user">Create User Accounts</a> - Create new user accounts.</li>
+            <li><a href="/admin/view_users">Data</a> - Modify user information.</li>
+            <li><a href="/admin/custom_query">View users query</a> - Disable or delete user accounts.</li>
+            <li><a href="/admin/reset_password">Reset User Passwords</a> - Reset user passwords.</li>
+            <li><a href="/admin/manage_roles">User Roles and Permissions Management</a> - Manage user roles and permissions.</li>
+            <li><a href="/admin/logout">log out</a></li>
+
+        </ul>
+    </section>
+<script src="{{ url_for('static', filename='static/JS/flash-disappear.js') }}"></script>
+</body>
+</html>

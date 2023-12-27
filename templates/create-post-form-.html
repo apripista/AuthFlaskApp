@@ -1,0 +1,26 @@
+<!-- create-post-form-.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/your-styles.css') }}">
+</head>
+<body>
+    <h2>Create a Post</h2>
+    <form method="POST" action="{{ url_for('create_post') }}">
+        {{ form.csrf_token }}
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+
+        <label for="content">Content:</label>
+        <textarea name="content" id="content" required></textarea>
+
+        <button type="submit">Create Post</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='Static/JS/your-scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsipiraHub - Join us</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap from CDN included!-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--My custom css files-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/home-page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/confirm-delete-account-1-styles.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Flash message-->
+    <div class="flash-message-box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {% if 'Error' in message %}
+                        <div class="flash-message flash-error">{{ message }}</div>
+                    {% elif 'success' in message %}
+                        <div class="flash-message flash-success">{{ message }}</div>
+                    {% elif 'Info' in message %}
+                        <div class="flash-message flash-info">{{ message }}</div>
+                    {% else %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div class="container mt-5 form-container">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header text-center">
+                <h1>Register</h1>
+            </div>
+            <div class="card-body">
+             <form method="POST" action="/register" onsubmit="return validateRegistration()" enctype="multipart/form-data">
+              <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" class="form-control" id="country" name="country" required>
+                    </div>
+                  <!-- Add reCAPTCHA field -->
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6Ld6zBQpAAAAAMgNi9K1FcZ1P5p9vpFKHhHFP5Tu"></div>
+                </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                     <div class="text-center">
+                        <a href="/" class="form-links">Home</a>
+                        <span class="mx-2">|</span>
+                        <a href="/login" class="form-links">Sign up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+<footer class="mt-5">
+                <p>Where we're<br>
+                Follow us: <a href="https://twitter.com/Perfect_Altruis" target="_blank">Twitter</a><br>
+                  We are on: <a href="https://github.com/Perfect-Altruistics" target="_blank">Git Hub</a><br>
+                  <a href="/services">Services</a><br>
+    &copy; 2023 InsipiraHub.Inc. All rights reserved.<br>
+</footer>
+
+
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='Static/Functions/flash-disappear.js') }}"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/CSS/flash-styles.css') }}">
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #cecaca;
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+      }
+
+      .container {
+          background-color: #dedddd;
+          padding: 40px;
+          border-radius: 8px;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+      }
+
+      p {
+          font-size: 18px;
+          margin-bottom: 20px;
+      }
+      a:hover {
+          text-decoration: underline;
+      }
+      .links {
+          margin-top: 20px;
+          text-align: center;
+      }
+
+      .links a {
+          margin: 0 3px;
+          text-decoration: none;
+          color: #1900ff;
+      }
+
+      .links a:hover {
+          
+          text-decoration: underline solid rgb(149, 17, 2) 3px;
+      }
+  </style>
+</head>        
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+        {% endwith %}
+        <div class="links">
+            <h1>Profile Update Failed</h1>
+            <p>The email is the same so no need to update it. Thank you</p>
+            <a href="{{ url_for('edit_profile') }}">Go back to Edit Profile</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='static/JS/flash-disappear.js') }}"></script>
+</body>
+</html>

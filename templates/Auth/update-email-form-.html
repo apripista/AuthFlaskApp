@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Email Form</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Include Bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--My custom css files-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Forms-styles/form-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/Flashes/flash-styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/General-Styles/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Static/CSS/index-styles-.css') }}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">The Intuitivers Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-5">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="form-group">
+            {% for message in messages %}
+            <div class="flash-message alert alert-info">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <h1>Update Email Address</h1>
+        <form method="POST" action="/update_email" onsubmit="return checkEmailAvailability()">
+            <div class="form-group">
+                <!-- New field for the current email -->
+                <label for="old_email">Current Email:</label>
+                <input type="email" class="form-control" id="old_email" name="old_email" required>
+            </div>
+            <div class="form-group">
+                <label for="new_email">New Email Address:</label>
+                <input type="email" class="form-control" id="new_email" name="new_email" required>
+            </div>
+            <div class="form-group">
+                <label for="security_pin">Security PIN:</label>
+                <input type="password" class="form-control" id="security_pin" name="security_pin" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Update Email</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='Static/JS/flash-disappear.js') }}"></script>
+
+</body>
+</html>

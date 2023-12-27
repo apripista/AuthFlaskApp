@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Confirmation</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Account Deletion Confirmation</h1>
+    <p>An email with a verification code has been sent to your email address. Please check your email and enter the code below:</p>
+
+    <form method="POST" action="/verify_2fa_deletion">
+        <label for="verification_code">Verification Code:</label>
+        <input type="text" id="verification_code" name="verification_code" required><br>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>

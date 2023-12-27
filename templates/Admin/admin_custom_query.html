@@ -1,0 +1,61 @@
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="{{ url_for('static', filename='static/CSS/flash-styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='static/CSS/query-results.css') }}">
+
+<div class="custom-query-form">
+      <!-- Link to log out -->
+    <a href="{{ url_for('admin_logout') }}" class="navigation-link">Log Out</a>
+
+    <!-- Link to go back to the admin dashboard -->
+    <a href="{{ url_for('admin_dashboard') }}" class="navigation-link">Dashboard</a>
+
+    <form action="/admin/custom_query" method="post">
+        <label for="sql_query">Enter SQL Query:</label><br>
+        <textarea id="sql_query" name="sql_query" rows="4" cols="50" required></textarea><br>
+        <input class="query-submit-button" type="submit" value="Execute Query">
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="query-result">
+        <h1>Query Result:</h1>
+
+        <p>Executed SQL query: {{ query }}</p>
+
+        {% if result %}
+            <table class="result-table">
+                <tr>
+                    {% for column in result[0].keys() %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in result %}
+                    <tr>
+                        {% for key, value in row.items() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No results found for the given query.</p>
+        {% endif %}
+    </div>
+
+    {% if query %}
+        <div class="executed-query">
+            <h3>Executed Query:</h3>
+            <p>{{ query }}</p>
+        </div>
+    {% endif %}
+</div>
+
+<script src="{{ url_for('static', filename='static/JS/flash-disappear.js') }}"></script>

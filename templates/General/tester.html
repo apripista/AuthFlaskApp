@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <!-- Include Bootstrap from CDN -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Include Select2 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <link rel="stylesheet" href="CSS/all-templates.css">
+    <!--<link rel="stylesheet" href="CSS/form-styles.css">
+    
+    <style>
+
+            /* Style the Select2 dropdown */
+            .select2-container--default .select2-selection--single {
+                background-color: rgb(77, 76, 76); /* Set the background color of the dropdown selection */
+                color: rgb(186, 41, 41); /* Set the text color of the dropdown selection */
+                border: 1px solid #888;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                background-color: teal;
+                border: 4px solid #008080;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                color: rgb(255, 255, 255); /* Set the text color of the dropdown selection content */
+            }
+
+            .select2-container--default .select2-selection--single:hover {
+                border-color: teal;
+            }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow:hover {
+                background-color: #008080;
+                border-color: #008080;
+            }
+            /* Style the Select2 dropdown options */
+            .select2-container--default .select2-results__option {
+                background-color: #333; /* Set the background color of the options */
+                color: white; /* Set the text color of the options */
+            }
+
+            .select2-container--default .select2-results__option--highlighted {
+                background-color: teal; /* Set the background color of the highlighted option */
+                color: white; /* Set the text color of the highlighted option */
+            }
+    </style>-->
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="/">The Intuitivers Group</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!-- Content -->
+    <div class="container mt-5 form-container">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header text-center">
+                <h1>Register</h1>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/register" onsubmit="return validateRegistration()">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <!-- Use Select2 for searchable dropdown -->
+                        <select class="form-control" id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <!-- Africa -->
+                            <optgroup label="Africa" style="color: black">
+                                <option value="Nigeria"style="color: red;">Nigeria</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Ivory Coast">Ivory Coast</option>
+                            </optgroup>
+                            <!-- Asia -->
+                            <optgroup label="Asia">
+                                <option value="China">China</option>
+                                <option value="India">India</option>
+                                <option value="Japan">Japan</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                            </optgroup>
+                            <!-- Europe -->
+                            <optgroup label="Europe">
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Greece">Greece</option>
+                            </optgroup>
+                            <!-- North America -->
+                            <optgroup label="North America">
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Dominican Republic">Dominican Republic</option>
+                                <option value="Haiti">Haiti</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Panama">Panama</option>
+                            </optgroup>
+                            <!-- Oceania -->
+                            <optgroup label="Oceania">
+                                <option value="Australia">Australia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                <option value="Solomon Islands">Solomon Islands</option>
+                                <option value="Vanuatu">Vanuatu</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="Tonga">Tonga</option>
+                                <option value="Kiribati">Kiribati</option>
+                                <option value="Micronesia">Micronesia</option>
+                            </optgroup>
+                            <!-- South America -->
+                            <optgroup label="South America">
+                                <option value="Brazil">Brazil</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Uruguay">Uruguay</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <!-- You can add more fields as needed -->
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+<footer class="mt-5">
+    <div class="container text-center">
+        <p>&copy; 2023 The Intuitivers Group. All rights reserved.</p>
+        <div class="row">
+            <div class="col-md-3">
+                <p><a href="/home">Home</a></p>
+                <p><a href="/about">About</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a href="/contact">Contact</a></p>
+                <p><a href="/services">Services</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><a href="/terms">Terms of Service</a></p>
+                <p><a href="/privacy">Privacy Policy</a></p>
+            </div>
+            <div class="col-md-3">
+                <p>Contact us: <a href="mailto:contact@intuitivers.com">contact@intuitivers.com</a></p>
+                <p>Follow us: <a href="https://twitter.com/intuitivers">Twitter</a></p>
+                <p><a href="/services">Services</a></p>
+                <p><a href="/documentation">Documentation</a></p>
+                <p><a href="/partnerships">Partnerships</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Include Bootstrap JS and Popper.js (required for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Include Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script>
+        // Initialize Select2 for the country dropdown
+        $(document).ready(function() {
+            $('#country').select2();
+        });
+
+        function validateRegistration() {
+            // You can add custom validation logic here
+            // For example, check if the email is in the correct format, or if the username is unique
+            return true; // Return true to allow form submission, or false to prevent it
+        }
+    </script>
+</body>
+</html>
