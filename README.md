@@ -72,6 +72,7 @@ Ensure you have the following installed on your system:
    ```bash
     git clone https://github.com/Perfect-Altruistics/AuthFkaskApp   cd InsipiraHub.git
     cd AuthFkaskApp
+    pip install -r requirements.txt
    
 
 Remember to install a requirements.txt file py running
