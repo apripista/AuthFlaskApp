@@ -44,12 +44,12 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_USERNAME"] = "intuitivers@gmail.com"
-app.config["MAIL_PASSWORD"] = "kgan dfin hlmj fgfu "
-app.config["MAIL_DEFAULT_SENDER"] = "intuitivers@gmail.com"
+app.config["MAIL_USERNAME"] = "youremail@gmail.com"
+app.config["MAIL_PASSWORD"] = "kgan dfin hlmj fgfu " # app password
+app.config["MAIL_DEFAULT_SENDER"] = "youremail@gmail.com"
 mail = Mail(app)
 
-
+# please replace this with your actual database credentials
 # Database connection
 conn = psycopg2.connect(
     database="altruistics",
