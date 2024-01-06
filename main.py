@@ -33,8 +33,8 @@ ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 app.config["MAX_CONTENT_LENGTH"] = 1 * 1024 * 1024  # 1MB limit
 
 # Set up Flask app configuration with updated reCAPTCHA keys
-app.config['RECAPTCHA_PUBLIC_KEY'] = '6Ld6zBQpAAAAAMgNi9K1FcZ1P5p9vpFKHhHFP5Tu'
-app.config['RECAPTCHA_PRIVATE_KEY'] = '6Ld6zBQpAAAAACCeLS0sOyQhgpiNuMneP-_EuX1b'
+app.config['RECAPTCHA_PUBLIC_KEY'] = '6Ld6zBQpAAAAAMgNi9K1FcZ1P5p9vpFKHhHFP5T'
+app.config['RECAPTCHA_PRIVATE_KEY'] = '6Ld6zBQpAAAAACCeLS0sOyQhgpiNuMneP-_EuX1'
 
 # Set session lifetime to 60 minutes (3600 seconds) == 1 hour
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=60)
@@ -44,9 +44,9 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
-app.config["MAIL_USERNAME"] = "youremail@gmail.com"
+app.config["MAIL_USERNAME"] = "intuitivers@gmail.com"
 app.config["MAIL_PASSWORD"] = "kgan dfin hlmj fgfu " # app password
-app.config["MAIL_DEFAULT_SENDER"] = "youremail@gmail.com"
+app.config["MAIL_DEFAULT_SENDER"] = "intuitivers@gmail.com"
 mail = Mail(app)
 
 # please replace this with your actual database credentials
@@ -574,7 +574,7 @@ def register():
         email_message = Message("Account Activation.", recipients=[email])
 
         # local server is running on port 5000
-        server_address = "http://localhost:5000"
+        server_address = "http://127.0.0.1:5000"
         email_message.body = (
             f"Hello {username},\n\n"
             f"We are excited to welcome you to our AuthFlaskApp platform! To complete your registration please "
@@ -3405,4 +3405,4 @@ def gateway_timeout(error):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
