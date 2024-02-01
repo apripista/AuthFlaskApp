@@ -45,7 +45,7 @@ app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USE_SSL"] = False
 app.config["MAIL_USERNAME"] = "intuitivers@gmail.com"
-app.config["MAIL_PASSWORD"] = "kgan dfin hlmj fgfu " # app password
+app.config["MAIL_PASSWORD"] = "jzql xqla yzzq ssys" # app password
 app.config["MAIL_DEFAULT_SENDER"] = "intuitivers@gmail.com"
 mail = Mail(app)
 
